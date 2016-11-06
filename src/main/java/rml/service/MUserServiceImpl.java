@@ -1,7 +1,6 @@
 package rml.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,7 @@ import rml.model.MUser;
 
 @Service("muserService")
 public class MUserServiceImpl implements MUserServiceI{
-
+	
 	private MUserMapper muserMapper;
 		
 	public MUserMapper getMuserMapper() {

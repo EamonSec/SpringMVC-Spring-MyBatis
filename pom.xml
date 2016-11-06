@@ -12,6 +12,7 @@
    	<spring.version>3.2.9.RELEASE</spring.version>
 	<mybatis.version>3.1.1</mybatis.version>
 	<mybatisspring.version>1.1.1</mybatisspring.version>
+	<mysql.version>5.1.24</mysql.version>
   </properties>
   
   <dependencies>
@@ -97,6 +98,18 @@
 		<artifactId>jackson-mapper-asl</artifactId>
 		<version>1.9.13</version>
 	</dependency>
+	<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin 
+	<dependency>
+	    <groupId>org.apache.tomcat.maven</groupId>
+	    <artifactId>tomcat7-maven-plugin</artifactId>
+	    <version>2.2</version>
+	</dependency>
+        -->
   </dependencies>
   
   <build>
@@ -116,6 +129,15 @@
           <version>3.0</version>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
+      </plugin>
+      <plugin>
+      	<groupId>org.apache.tomcat.maven</groupId>
+	    <artifactId>tomcat7-maven-plugin</artifactId>
+	    <version>2.2</version>
+	    <configuration>
+	    	<server>myserver</server>
+	    	<url>http://127.0.0.1:8080/manager/html</url>
+	    </configuration>
       </plugin>
     </plugins>
     
